@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using System.ComponentModel;
 
 namespace ScintillaNET;
 
@@ -18,6 +19,7 @@ internal partial class FlagsEditorControl : UserControl
 
     private readonly Type enumType;
     private readonly Enum initialValue;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public Enum Value { get; protected set; }
 
     private readonly IWindowsFormsEditorService editorService;

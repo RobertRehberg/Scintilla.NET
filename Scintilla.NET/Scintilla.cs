@@ -77,7 +77,7 @@ namespace ScintillaNET
         public static IEnumerable<string> EnumerateSatelliteLibrarySearchPaths()
         {
             // check run-time paths
-            string folder = Path.Combine("runtimes", Environment.Is64BitProcess ? "win-x64" : "win-x86", "native");
+            string folder = Path.Combine("runtimes", "win-" + System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture.ToString().ToLower(), "native");
             string location = Assembly.GetExecutingAssembly().Location;
             if (string.IsNullOrWhiteSpace(location))
                 location = Assembly.GetEntryAssembly().Location;
@@ -4067,6 +4067,7 @@ namespace ScintillaNET
         /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override Color BackColor
         {
             get
@@ -4084,6 +4085,7 @@ namespace ScintillaNET
         /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override Image BackgroundImage
         {
             get
@@ -4101,6 +4103,7 @@ namespace ScintillaNET
         /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override ImageLayout BackgroundImageLayout
         {
             get
@@ -4622,6 +4625,7 @@ namespace ScintillaNET
         /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override Cursor Cursor
         {
             get
@@ -4898,6 +4902,7 @@ namespace ScintillaNET
         /// <returns>The <see cref="T:System.Drawing.Font" /> to apply to the text displayed by the control. The default is the value of the <see cref="P:System.Windows.Forms.Control.DefaultFont" /> property.</returns>
         [Category("Appearance")]
         [Description("The font of the text displayed by the control.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override Font Font
         {
             get
@@ -4965,6 +4970,7 @@ namespace ScintillaNET
         /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override Color ForeColor
         {
             get
@@ -5154,6 +5160,7 @@ namespace ScintillaNET
         /// <value>The name of the lexer.</value>
         /// <exception cref="InvalidOperationException">Lexer with the name of 'Value' was not found.</exception>
         [Category("Lexing")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string LexerName
         {
             get => this.lexerName;
@@ -5488,6 +5495,7 @@ namespace ScintillaNET
         /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new Padding Padding
         {
             get
@@ -6360,6 +6368,7 @@ namespace ScintillaNET
         [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design", typeof(UITypeEditor))]
         [Description("The text associated with this control.")]
         [Category("Appearance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override unsafe string Text
         {
             get
@@ -6441,6 +6450,7 @@ namespace ScintillaNET
         /// Gets or sets a value indicating whether to use the wait cursor for the current control.
         /// </summary>
         /// <returns>true to use the wait cursor for the current control; otherwise, false. The default is false.</returns>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new bool UseWaitCursor
         {
             get
